@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html>
+<body>
+        <h1>DATA 608 Assignment 05</h1>
+            <h2>Shane Hylton</h2>
+            <p><b>Word Reversal</b></p>
+
+           
+            
+            <script>
+                var word_in = prompt("Enter a word: ","Type to Enter");
+                var character_list = word_in.split("");
+                var reversed = character_list.reverse();
+                var word_out = reversed.join("");
+                document.write('<p>Congratulations, here is your word, reversed!<br></p>')
+                document.write(word_out, '<br>')
+
+                if (word_in == word_out){
+                    document.write('<br><p>OMG. Palindrome. Add that to the list.</p>')
+                }
+                </script>
+
+
+
+<p><b> Multiples Table </b></p>
+
+<input type="button" value="Create Multiples Table" onclick="create_table()">
+
+<script>
+var num_in = prompt("Enter a number");
+var num_in = parseInt(num_in);
+
+function create_table(){
+    var body = document.getElementsByTagName("body")[0];
+    var table = document.createElement("table");
+    var table_body = document.createElement("tbody");
+    var i = 1
+    for(var j = 0; j < 5; j++){
+         var row = document.createElement("tr");
+         for (var k = 0;k<4;k++){
+             var loc  = document.createElement("td");
+              var mult = document.createTextNode(num_in * i);
+               loc.appendChild(mult);
+                row.appendChild(loc);
+                 i++
+        }
+    table_body.appendChild(row);
+    }
+    table.appendChild(table_body);
+    body.appendChild(table);
+    table.setAttribute("border", "2")
+    document.write(table);
+} 
+
+</script>
+
+</body>
+</html>
